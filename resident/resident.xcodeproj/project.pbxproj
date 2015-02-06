@@ -10,6 +10,9 @@
 		7614F8E71A84A1C5009E4AEC /* resident_cover_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7614F8E61A84A1C5009E4AEC /* resident_cover_1@2x.png */; };
 		7653F79B1A846FF10032DE8C /* ResidentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */; };
 		7653F79F1A8477460032DE8C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653F79D1A8477460032DE8C /* TableViewCell.m */; };
+		76E5BF671A84D2AA001D35DE /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E5BF661A84D2AA001D35DE /* FXBlurView.m */; };
+		76E5BF6B1A84DA16001D35DE /* UIScrollView+TwitterCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E5BF6A1A84DA16001D35DE /* UIScrollView+TwitterCover.m */; };
+		76E5BFA71A84F42D001D35DE /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E5BFA61A84F42D001D35DE /* UIViewExt.m */; };
 		76E7D6FC1A83E3FE004F3873 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E7D6FB1A83E3FE004F3873 /* main.m */; };
 		76E7D6FF1A83E3FE004F3873 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E7D6FE1A83E3FE004F3873 /* AppDelegate.m */; };
 		76E7D7021A83E3FE004F3873 /* resident.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76E7D7001A83E3FE004F3873 /* resident.xcdatamodeld */; };
@@ -39,6 +42,12 @@
 		7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentDetailViewController.m; sourceTree = "<group>"; };
 		7653F79C1A8477460032DE8C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		7653F79D1A8477460032DE8C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		76E5BF651A84D2AA001D35DE /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		76E5BF661A84D2AA001D35DE /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		76E5BF691A84DA16001D35DE /* UIScrollView+TwitterCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TwitterCover.h"; sourceTree = "<group>"; };
+		76E5BF6A1A84DA16001D35DE /* UIScrollView+TwitterCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TwitterCover.m"; sourceTree = "<group>"; };
+		76E5BFA51A84F42D001D35DE /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		76E5BFA61A84F42D001D35DE /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		76E7D6F61A83E3FE004F3873 /* 生化危机攻略.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "生化危机攻略.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E7D6FA1A83E3FE004F3873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76E7D6FB1A83E3FE004F3873 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +105,50 @@
 			name = "Cover Resident";
 			sourceTree = "<group>";
 		};
+		76E5BF641A84D2AA001D35DE /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				76E5BF651A84D2AA001D35DE /* FXBlurView.h */,
+				76E5BF661A84D2AA001D35DE /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		76E5BF681A84DA16001D35DE /* TwitterCover */ = {
+			isa = PBXGroup;
+			children = (
+				76E5BF691A84DA16001D35DE /* UIScrollView+TwitterCover.h */,
+				76E5BF6A1A84DA16001D35DE /* UIScrollView+TwitterCover.m */,
+			);
+			path = TwitterCover;
+			sourceTree = "<group>";
+		};
+		76E5BF6C1A84DA31001D35DE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7653F79C1A8477460032DE8C /* TableViewCell.h */,
+				7653F79D1A8477460032DE8C /* TableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		76E5BFA31A84F407001D35DE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				76E5BFA41A84F421001D35DE /* UIViewExt */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		76E5BFA41A84F421001D35DE /* UIViewExt */ = {
+			isa = PBXGroup;
+			children = (
+				76E5BFA51A84F42D001D35DE /* UIViewExt.h */,
+				76E5BFA61A84F42D001D35DE /* UIViewExt.m */,
+			);
+			name = UIViewExt;
+			sourceTree = "<group>";
+		};
 		76E7D6ED1A83E3FE004F3873 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +172,7 @@
 			children = (
 				76E7D7241A83E463004F3873 /* Access */,
 				76E7D7221A83E439004F3873 /* Delegate */,
+				76E5BFA31A84F407001D35DE /* Tools */,
 				76E7D7341A8463D3004F3873 /* Service */,
 				76E7D7301A8462DD004F3873 /* Model */,
 				76E7D7351A8463EE004F3873 /* View */,
@@ -210,8 +264,9 @@
 		76E7D7351A8463EE004F3873 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7653F79C1A8477460032DE8C /* TableViewCell.h */,
-				7653F79D1A8477460032DE8C /* TableViewCell.m */,
+				76E5BF6C1A84DA31001D35DE /* TableViewCell */,
+				76E5BF681A84DA16001D35DE /* TwitterCover */,
+				76E5BF641A84D2AA001D35DE /* FXBlurView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -321,12 +376,15 @@
 			files = (
 				76E7D7331A8462F7004F3873 /* Entity.m in Sources */,
 				7653F79B1A846FF10032DE8C /* ResidentDetailViewController.m in Sources */,
+				76E5BFA71A84F42D001D35DE /* UIViewExt.m in Sources */,
 				76E7D6FF1A83E3FE004F3873 /* AppDelegate.m in Sources */,
 				76E7D7381A8465D7004F3873 /* ResidentMainArrayService.m in Sources */,
 				76E7D7021A83E3FE004F3873 /* resident.xcdatamodeld in Sources */,
 				7653F79F1A8477460032DE8C /* TableViewCell.m in Sources */,
 				76E7D7291A83E95F004F3873 /* TableViewController.m in Sources */,
 				76E7D6FC1A83E3FE004F3873 /* main.m in Sources */,
+				76E5BF671A84D2AA001D35DE /* FXBlurView.m in Sources */,
+				76E5BF6B1A84DA16001D35DE /* UIScrollView+TwitterCover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
