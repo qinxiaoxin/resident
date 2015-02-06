@@ -1,0 +1,18 @@
+//
+//  resident.pch
+//  resident
+//
+//  Created by Xin Qin on 2/6/15.
+//  Copyright (c) 2015 Xin Qin. All rights reserved.
+//
+
+#ifndef resident_resident_pch
+#define resident_resident_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+#import "AppDelegate.h"
+#import "MacroUtils.h"

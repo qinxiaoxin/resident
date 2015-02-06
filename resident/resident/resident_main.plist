@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机</string>
+		<key>jpname</key>
+		<string>バイオハザード</string>
+		<key>enname</key>
+		<string>Resident Evil</string>
+		<key>year</key>
+		<string>1996年</string>
+		<key>origin</key>
+		<string>PS</string>
+		<key>transplant</key>
+		<string>PC,SS,NGC,NDS</string>
+		<key>image</key>
+		<string>resident_cover_1</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机2</string>
+		<key>jpname</key>
+		<string>バイオハザード2</string>
+		<key>enname</key>
+		<string>Resident Evil 2</string>
+		<key>year</key>
+		<string>1998年</string>
+		<key>origin</key>
+		<string>PS</string>
+		<key>transplant</key>
+		<string>PC,N64,DC,NGC</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机3</string>
+		<key>jpname</key>
+		<string>バイオハザード3</string>
+		<key>enname</key>
+		<string>Resident Evil 3</string>
+		<key>year</key>
+		<string>1999年</string>
+		<key>origin</key>
+		<string>PS</string>
+		<key>transplant</key>
+		<string>PC,DC,NGC</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机 代号：维罗妮卡</string>
+		<key>jpname</key>
+		<string>バイオハザード CODE: Veronica</string>
+		<key>enname</key>
+		<string>Resident Evil:Code Veronica</string>
+		<key>year</key>
+		<string>2000年</string>
+		<key>origin</key>
+		<string>DC</string>
+		<key>transplant</key>
+		<string>PS2,NGC,PS3,XBOX360</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机 重置版</string>
+		<key>jpname</key>
+		<string>バイオハザード</string>
+		<key>enname</key>
+		<string>Resident Evil</string>
+		<key>year</key>
+		<string>2002年</string>
+		<key>origin</key>
+		<string>NGC</string>
+		<key>transplant</key>
+		<string>Wii,PS3,XBOX360,PS4,XBOXOne,PC</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机0</string>
+		<key>jpname</key>
+		<string>バイオハザード0</string>
+		<key>enname</key>
+		<string>Resident Evil 0</string>
+		<key>year</key>
+		<string>2002年</string>
+		<key>origin</key>
+		<string>NGC</string>
+		<key>transplant</key>
+		<string>Wii</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机4</string>
+		<key>jpname</key>
+		<string>バイオハザード4</string>
+		<key>enname</key>
+		<string>Resident Evil 4</string>
+		<key>year</key>
+		<string>2005年</string>
+		<key>origin</key>
+		<string>NGC</string>
+		<key>transplant</key>
+		<string>PC,PS2,Wii,iPhone,iPad,PS3,XBOX360</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机5</string>
+		<key>jpname</key>
+		<string>バイオハザード5</string>
+		<key>enname</key>
+		<string>Resident Evil 5</string>
+		<key>year</key>
+		<string>2009年</string>
+		<key>origin</key>
+		<string>PS3,XBOX360</string>
+		<key>transplant</key>
+		<string>PC</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机：启示录</string>
+		<key>jpname</key>
+		<string>バイオハザード リベレーションズ</string>
+		<key>enname</key>
+		<string>Resident Evil: Revelations</string>
+		<key>year</key>
+		<string>2012年</string>
+		<key>origin</key>
+		<string>3DS</string>
+		<key>transplant</key>
+		<string>XBOX360,PS3,Wii U,PC</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机6</string>
+		<key>jpname</key>
+		<string>バイオハザード6</string>
+		<key>enname</key>
+		<string>Resident Evil 6</string>
+		<key>year</key>
+		<string>2012年</string>
+		<key>origin</key>
+		<string>PS3,XBOX360</string>
+		<key>transplant</key>
+		<string>PC</string>
+	</dict>
+	<dict>
+		<key>cnname</key>
+		<string>生化危机：启示录2</string>
+		<key>jpname</key>
+		<string>バイオハザード リベレーションズ 2</string>
+		<key>enname</key>
+		<string>Resident Evil: Revelations 2</string>
+		<key>year</key>
+		<string>2015年</string>
+		<key>origin</key>
+		<string>PS3,XBOX360,PS4,XBOXOne,PC</string>
+		<key>transplant</key>
+		<string>PS vita</string>
+	</dict>
+</array>
+</plist>
