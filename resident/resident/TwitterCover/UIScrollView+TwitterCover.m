@@ -28,7 +28,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Accelerate/Accelerate.h>
 
-
 static char UIScrollViewTwitterCover;
 
 @implementation UIScrollView (TwitterCover)
@@ -52,13 +51,14 @@ static char UIScrollViewTwitterCover;
 
 - (void)addTwitterCoverWithImage:(UIImage*)image withTopView:(UIView*)topView
 {
-    CHTwitterCoverView *view = [[CHTwitterCoverView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_WIDTH) andContentTopView:topView];
+    CHTwitterCoverView *view = [[CHTwitterCoverView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, CHTWITTERCOVERVIEW_HEIGHT) andContentTopView:topView];
     
     view.backgroundColor = [UIColor clearColor];
     view.image = image;
     view.scrollView = self;
     
     [self addSubview:view];
+    
     if (topView) {
         [self addSubview:topView];
     }
@@ -111,13 +111,12 @@ static char UIScrollViewTwitterCover;
     [blurImages_ addObject:self.image];
     for (NSUInteger i = 0; i < 20; i++) {
         [blurImages_ addObject:[self.image boxblurImageWithBlur:factor]];
-        factor+=0.04;
+        factor += 0.04;
     }
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView
 {
-    
     [_scrollView removeObserver:self forKeyPath:@"contentOffset"];
     _scrollView = scrollView;
     [_scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -133,34 +132,28 @@ static char UIScrollViewTwitterCover;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if (self.scrollView.contentOffset.y < 0) {
-
-        CGFloat offset = -self.scrollView.contentOffset.y;
-        topView.frame = CGRectMake(0, -offset, SCREEN_WIDTH, topView.bounds.size.height);
-
-        self.frame = CGRectMake(-offset,-offset + topView.bounds.size.height, SCREEN_WIDTH + offset * 2, SCREEN_WIDTH + offset);
-        NSInteger index = offset / 10;
-        if (index < 0) {
-            index = 0;
-        }
-        else if(index >= blurImages_.count) {
-            index = blurImages_.count - 1;
-        }
-        UIImage *image = blurImages_[index];
-        if (self.image != image) {
-            [super setImage:image];
-        }
-        
+    
+    CGFloat offset = -self.scrollView.contentOffset.y;
+    
+    if (offset < 64) {
+        return;
     }
-    else {
-        topView.frame = CGRectMake(0, 0, SCREEN_WIDTH, topView.bounds.size.height);
-
-        self.frame = CGRectMake(0,topView.bounds.size.height, SCREEN_WIDTH, SCREEN_WIDTH);
-        UIImage *image = blurImages_[0];
-
-        if (self.image != image) {
-            [super setImage:image];
-        }
+    
+    topView.frame = CGRectMake(0, -offset, 320, topView.bounds.size.height);
+    
+    self.frame = CGRectMake(-offset,-offset + topView.bounds.size.height, 320 + offset * 2, CHTWITTERCOVERVIEW_HEIGHT + offset);
+    
+    NSInteger index = offset / 10;
+    if (index < 0) {
+        index = 0;
+    }
+    else if(index >= blurImages_.count) {
+        index = blurImages_.count - 1;
+    }
+    
+    UIImage *image = blurImages_[index];
+    if (self.image != image) {
+        [super setImage:image];
     }
 }
 
@@ -173,7 +166,7 @@ static char UIScrollViewTwitterCover;
 
 @implementation UIImage (Blur)
 
--(UIImage *)boxblurImageWithBlur:(CGFloat)blur {
+- (UIImage *)boxblurImageWithBlur:(CGFloat)blur {
     
     NSData *imageData = UIImageJPEGRepresentation(self, 1); // convert to jpeg
     UIImage* destImage = [UIImage imageWithData:imageData];
@@ -182,7 +175,7 @@ static char UIScrollViewTwitterCover;
     if (blur < 0.f || blur > 1.f) {
         blur = 0.5f;
     }
-    int boxSize = (int)(blur * 40);
+    int boxSize = (int)(blur * BLUR_DEGREE);
     boxSize = boxSize - (boxSize % 2) + 1;
     
     CGImageRef img = destImage.CGImage;
@@ -204,7 +197,7 @@ static char UIScrollViewTwitterCover;
     inBuffer.height = CGImageGetHeight(img);
     inBuffer.rowBytes = CGImageGetBytesPerRow(img);
     
-    inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+    inBuffer.data = (void *)CFDataGetBytePtr(inBitmapData);
     
     //create vImage_Buffer for output
     

@@ -10,7 +10,9 @@
 		7614F8E71A84A1C5009E4AEC /* resident_cover_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7614F8E61A84A1C5009E4AEC /* resident_cover_1@2x.png */; };
 		7653F79B1A846FF10032DE8C /* ResidentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */; };
 		7653F79F1A8477460032DE8C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653F79D1A8477460032DE8C /* TableViewCell.m */; };
-		76E5BF671A84D2AA001D35DE /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E5BF661A84D2AA001D35DE /* FXBlurView.m */; };
+		76B7791D1A859D5100845D2E /* nav_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B7791C1A859D5100845D2E /* nav_bg@2x.png */; };
+		76B7791F1A85A36300845D2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B7791E1A85A36300845D2E /* Default-568h@2x.png */; };
+		76B779271A85CCAF00845D2E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B779261A85CCAF00845D2E /* FXBlurView.m */; };
 		76E5BF6B1A84DA16001D35DE /* UIScrollView+TwitterCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E5BF6A1A84DA16001D35DE /* UIScrollView+TwitterCover.m */; };
 		76E5BFA71A84F42D001D35DE /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E5BFA61A84F42D001D35DE /* UIViewExt.m */; };
 		76E7D6FC1A83E3FE004F3873 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E7D6FB1A83E3FE004F3873 /* main.m */; };
@@ -42,8 +44,10 @@
 		7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentDetailViewController.m; sourceTree = "<group>"; };
 		7653F79C1A8477460032DE8C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		7653F79D1A8477460032DE8C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		76E5BF651A84D2AA001D35DE /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
-		76E5BF661A84D2AA001D35DE /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		76B7791C1A859D5100845D2E /* nav_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg@2x.png"; sourceTree = "<group>"; };
+		76B7791E1A85A36300845D2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images.xcassets/LaunchImage.launchimage/Default-568h@2x.png"; sourceTree = "<group>"; };
+		76B779251A85CCAF00845D2E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		76B779261A85CCAF00845D2E /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		76E5BF691A84DA16001D35DE /* UIScrollView+TwitterCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TwitterCover.h"; sourceTree = "<group>"; };
 		76E5BF6A1A84DA16001D35DE /* UIScrollView+TwitterCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TwitterCover.m"; sourceTree = "<group>"; };
 		76E5BFA51A84F42D001D35DE /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		7614F8E21A849ED4009E4AEC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				76B7791E1A85A36300845D2E /* Default-568h@2x.png */,
+				76B7791B1A859D4300845D2E /* NavigationBar */,
 				7614F8E31A849EE3009E4AEC /* Cover Resident */,
 			);
 			name = Resource;
@@ -105,11 +111,19 @@
 			name = "Cover Resident";
 			sourceTree = "<group>";
 		};
-		76E5BF641A84D2AA001D35DE /* FXBlurView */ = {
+		76B7791B1A859D4300845D2E /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				76E5BF651A84D2AA001D35DE /* FXBlurView.h */,
-				76E5BF661A84D2AA001D35DE /* FXBlurView.m */,
+				76B7791C1A859D5100845D2E /* nav_bg@2x.png */,
+			);
+			name = NavigationBar;
+			sourceTree = "<group>";
+		};
+		76B779241A85CCAF00845D2E /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				76B779251A85CCAF00845D2E /* FXBlurView.h */,
+				76B779261A85CCAF00845D2E /* FXBlurView.m */,
 			);
 			path = FXBlurView;
 			sourceTree = "<group>";
@@ -264,9 +278,9 @@
 		76E7D7351A8463EE004F3873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				76B779241A85CCAF00845D2E /* FXBlurView */,
 				76E5BF6C1A84DA31001D35DE /* TableViewCell */,
 				76E5BF681A84DA16001D35DE /* TwitterCover */,
-				76E5BF641A84D2AA001D35DE /* FXBlurView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,7 +369,9 @@
 				76E7D7081A83E3FE004F3873 /* Main.storyboard in Resources */,
 				76E7D70D1A83E3FE004F3873 /* LaunchScreen.xib in Resources */,
 				76E7D70A1A83E3FE004F3873 /* Images.xcassets in Resources */,
+				76B7791D1A859D5100845D2E /* nav_bg@2x.png in Resources */,
 				76E7D72F1A845406004F3873 /* resident_main.plist in Resources */,
+				76B7791F1A85A36300845D2E /* Default-568h@2x.png in Resources */,
 				7614F8E71A84A1C5009E4AEC /* resident_cover_1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,11 +395,11 @@
 				76E5BFA71A84F42D001D35DE /* UIViewExt.m in Sources */,
 				76E7D6FF1A83E3FE004F3873 /* AppDelegate.m in Sources */,
 				76E7D7381A8465D7004F3873 /* ResidentMainArrayService.m in Sources */,
+				76B779271A85CCAF00845D2E /* FXBlurView.m in Sources */,
 				76E7D7021A83E3FE004F3873 /* resident.xcdatamodeld in Sources */,
 				7653F79F1A8477460032DE8C /* TableViewCell.m in Sources */,
 				76E7D7291A83E95F004F3873 /* TableViewController.m in Sources */,
 				76E7D6FC1A83E3FE004F3873 /* main.m in Sources */,
-				76E5BF671A84D2AA001D35DE /* FXBlurView.m in Sources */,
 				76E5BF6B1A84DA16001D35DE /* UIScrollView+TwitterCover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,9 +28,13 @@
 #define PATH_OF_TEMP        NSTemporaryDirectory()
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
-#define STATUS_BAR_HEIGHT                           20
-
 #define SCREEN_HEIGHT   [[UIScreen mainScreen] applicationFrame].size.height
 #define SCREEN_WIDTH    [[UIScreen mainScreen] applicationFrame].size.width
 #define SYSTEM_VERSION            ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define COLOR(r,g,b,a)  [UIColor colorWithRed:(float)r/255.f green:(float)g/255.f blue:(float)b/255.f  alpha:a]
+
+#define STATUS_BAR_HEIGHT                           20
+#define COVER_IMAGE_VIEW_WIDTH                      180
+#define COVER_IMAGE_VIEW_HEIGHT                     270
+#define BLUR_DEGREE                                 400
+#define CHTWITTERCOVERVIEW_HEIGHT                   320

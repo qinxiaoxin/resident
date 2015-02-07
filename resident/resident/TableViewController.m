@@ -29,9 +29,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self initData];
-    
-//    [self setNavbar];
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self setNavbarWhiteAndStatusBarWhite];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,22 +52,51 @@
     self.residentMainArray = [ResidentMainArrayService fetchResidentMainArray];
 }
 
-//- (void)setNavbar
-//{
-//    self.navigationController.hidesBarsOnSwipe = YES;
-//}
+//设置新界面 navigationbar & statusbar
+- (void)setNavbarWhiteAndStatusBarWhite
+{
+    //navigationbar 背景色
+    self.navigationController.navigationBar.barTintColor = COLOR(55, 55, 55, 1);
+    
+    //navigationbar 标题颜色
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont systemFontOfSize:16.f], NSFontAttributeName, nil]];
+    
+    //navigationbar 置为不透明
+    self.navigationController.navigationBar.translucent = NO;
+    
+    
+    //navigationbar 还原底部横线
+//    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
+//        
+//        NSArray *array = self.navigationController.navigationBar.subviews;
+//        
+//        for (id obj in array) {
+//            if ([obj isKindOfClass:[UIImageView class]]) {
+//                UIImageView *imageView = (UIImageView *)obj;
+//                imageView.hidden = NO;
+//            }
+//        }
+//    }
+    
+    //statusbar 显示为白色
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
 
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return self.residentMainArray.count;
 }
@@ -72,16 +106,7 @@
     
     static NSString *CellIdentifier = @"TableViewCell";
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-//    if (cell == nil) {
-//        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-//                                       reuseIdentifier: CellIdentifier];
-//    }else{
-//        for (UIView *subView in cell.contentView.subviews)
-//        {
-//            [subView removeFromSuperview];
-//        }
-//    }
+    cell.backgroundColor = COLOR(50, 50, 50, 1);
     
     NSDictionary *dic = [self.residentMainArray objectAtIndex:indexPath.row];
     cell.cnLabel.text = [dic valueForKeyPath:@"cnname"];
@@ -93,46 +118,26 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+#pragma mark - Table view delegate
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    tableView.backgroundColor = COLOR(50, 50, 50, 1);
+    
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
 
 - (void)prepareResidentDetailViewController:(ResidentDetailViewController *)rdvc toDisplay:(NSDictionary *)dic
 {
-    rdvc.title = [dic valueForKeyPath:@"cnname"];
     rdvc.residentDic = dic;
 }
 
@@ -140,7 +145,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         if (indexPath) {
