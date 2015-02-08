@@ -36,5 +36,5 @@
 #define STATUS_BAR_HEIGHT                           20
 #define COVER_IMAGE_VIEW_WIDTH                      180
 #define COVER_IMAGE_VIEW_HEIGHT                     270
-#define BLUR_DEGREE                                 400
+#define BLUR_DEGREE                                 200
 #define CHTWITTERCOVERVIEW_HEIGHT                   320

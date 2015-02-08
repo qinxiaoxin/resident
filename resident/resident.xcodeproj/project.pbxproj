@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7614F8E71A84A1C5009E4AEC /* resident_cover_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7614F8E61A84A1C5009E4AEC /* resident_cover_1@2x.png */; };
 		7653F79B1A846FF10032DE8C /* ResidentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */; };
 		7653F79F1A8477460032DE8C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653F79D1A8477460032DE8C /* TableViewCell.m */; };
+		76B2C1B91A86322900AE2E1D /* TYDotIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2C1B41A86322900AE2E1D /* TYDotIndicatorView.m */; };
+		76B2C1BA1A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2C1B61A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.m */; };
+		76B2C1BB1A86322900AE2E1D /* XHLoadingNavigationItemTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2C1B81A86322900AE2E1D /* XHLoadingNavigationItemTitleView.m */; };
+		76B2C1C51A865CC100AE2E1D /* Biohazard@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1BC1A865CC100AE2E1D /* Biohazard@2x.jpg */; };
+		76B2C1C61A865CC100AE2E1D /* Resident_Evil_0@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1BD1A865CC100AE2E1D /* Resident_Evil_0@2x.jpg */; };
+		76B2C1C71A865CC100AE2E1D /* Resident_Evil_2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1BE1A865CC100AE2E1D /* Resident_Evil_2@2x.jpg */; };
+		76B2C1C81A865CC100AE2E1D /* Resident_Evil_3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1BF1A865CC100AE2E1D /* Resident_Evil_3@2x.jpg */; };
+		76B2C1C91A865CC100AE2E1D /* Resident_Evil_4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1C01A865CC100AE2E1D /* Resident_Evil_4@2x.jpg */; };
+		76B2C1CA1A865CC100AE2E1D /* Resident_Evil_5@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1C11A865CC100AE2E1D /* Resident_Evil_5@2x.jpg */; };
+		76B2C1CD1A865CC100AE2E1D /* Resident_Evil_Revelations@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1C41A865CC100AE2E1D /* Resident_Evil_Revelations@2x.jpg */; };
+		76B2C1CF1A865E1900AE2E1D /* Resident_Evil_6@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1CE1A865E1900AE2E1D /* Resident_Evil_6@2x.jpg */; };
+		76B2C1D11A865F3000AE2E1D /* Resident_Evil_Code_Veronica@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1D01A865F3000AE2E1D /* Resident_Evil_Code_Veronica@2x.jpg */; };
+		76B2C1D51A86601300AE2E1D /* Biohazard_HD@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76B2C1D41A86601300AE2E1D /* Biohazard_HD@2x.jpg */; };
+		76B2C1D81A86610300AE2E1D /* ResidentCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2C1D71A86610300AE2E1D /* ResidentCoverViewController.m */; };
 		76B7791D1A859D5100845D2E /* nav_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B7791C1A859D5100845D2E /* nav_bg@2x.png */; };
 		76B7791F1A85A36300845D2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B7791E1A85A36300845D2E /* Default-568h@2x.png */; };
 		76B779271A85CCAF00845D2E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B779261A85CCAF00845D2E /* FXBlurView.m */; };
@@ -39,11 +52,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7614F8E61A84A1C5009E4AEC /* resident_cover_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resident_cover_1@2x.png"; sourceTree = "<group>"; };
 		7653F7991A846FF10032DE8C /* ResidentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentDetailViewController.h; sourceTree = "<group>"; };
 		7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentDetailViewController.m; sourceTree = "<group>"; };
 		7653F79C1A8477460032DE8C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		7653F79D1A8477460032DE8C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		76B2C1B31A86322900AE2E1D /* TYDotIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDotIndicatorView.h; sourceTree = "<group>"; };
+		76B2C1B41A86322900AE2E1D /* TYDotIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDotIndicatorView.m; sourceTree = "<group>"; };
+		76B2C1B51A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XHLoadingNavigationItemTitle.h"; sourceTree = "<group>"; };
+		76B2C1B61A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XHLoadingNavigationItemTitle.m"; sourceTree = "<group>"; };
+		76B2C1B71A86322900AE2E1D /* XHLoadingNavigationItemTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoadingNavigationItemTitleView.h; sourceTree = "<group>"; };
+		76B2C1B81A86322900AE2E1D /* XHLoadingNavigationItemTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLoadingNavigationItemTitleView.m; sourceTree = "<group>"; };
+		76B2C1BC1A865CC100AE2E1D /* Biohazard@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Biohazard@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1BD1A865CC100AE2E1D /* Resident_Evil_0@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_0@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1BE1A865CC100AE2E1D /* Resident_Evil_2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_2@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1BF1A865CC100AE2E1D /* Resident_Evil_3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_3@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1C01A865CC100AE2E1D /* Resident_Evil_4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_4@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1C11A865CC100AE2E1D /* Resident_Evil_5@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_5@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1C41A865CC100AE2E1D /* Resident_Evil_Revelations@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_Revelations@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1CE1A865E1900AE2E1D /* Resident_Evil_6@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_6@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1D01A865F3000AE2E1D /* Resident_Evil_Code_Veronica@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resident_Evil_Code_Veronica@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1D41A86601300AE2E1D /* Biohazard_HD@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Biohazard_HD@2x.jpg"; sourceTree = "<group>"; };
+		76B2C1D61A86610300AE2E1D /* ResidentCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentCoverViewController.h; sourceTree = "<group>"; };
+		76B2C1D71A86610300AE2E1D /* ResidentCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentCoverViewController.m; sourceTree = "<group>"; };
 		76B7791C1A859D5100845D2E /* nav_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg@2x.png"; sourceTree = "<group>"; };
 		76B7791E1A85A36300845D2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images.xcassets/LaunchImage.launchimage/Default-568h@2x.png"; sourceTree = "<group>"; };
 		76B779251A85CCAF00845D2E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -106,9 +136,31 @@
 		7614F8E31A849EE3009E4AEC /* Cover Resident */ = {
 			isa = PBXGroup;
 			children = (
-				7614F8E61A84A1C5009E4AEC /* resident_cover_1@2x.png */,
+				76B2C1BC1A865CC100AE2E1D /* Biohazard@2x.jpg */,
+				76B2C1D41A86601300AE2E1D /* Biohazard_HD@2x.jpg */,
+				76B2C1BD1A865CC100AE2E1D /* Resident_Evil_0@2x.jpg */,
+				76B2C1BE1A865CC100AE2E1D /* Resident_Evil_2@2x.jpg */,
+				76B2C1BF1A865CC100AE2E1D /* Resident_Evil_3@2x.jpg */,
+				76B2C1C01A865CC100AE2E1D /* Resident_Evil_4@2x.jpg */,
+				76B2C1C11A865CC100AE2E1D /* Resident_Evil_5@2x.jpg */,
+				76B2C1CE1A865E1900AE2E1D /* Resident_Evil_6@2x.jpg */,
+				76B2C1D01A865F3000AE2E1D /* Resident_Evil_Code_Veronica@2x.jpg */,
+				76B2C1C41A865CC100AE2E1D /* Resident_Evil_Revelations@2x.jpg */,
 			);
 			name = "Cover Resident";
+			sourceTree = "<group>";
+		};
+		76B2C1B21A86322900AE2E1D /* XHLoadingNavigationItemTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				76B2C1B31A86322900AE2E1D /* TYDotIndicatorView.h */,
+				76B2C1B41A86322900AE2E1D /* TYDotIndicatorView.m */,
+				76B2C1B51A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.h */,
+				76B2C1B61A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.m */,
+				76B2C1B71A86322900AE2E1D /* XHLoadingNavigationItemTitleView.h */,
+				76B2C1B81A86322900AE2E1D /* XHLoadingNavigationItemTitleView.m */,
+			);
+			path = XHLoadingNavigationItemTitleView;
 			sourceTree = "<group>";
 		};
 		76B7791B1A859D4300845D2E /* NavigationBar */ = {
@@ -244,6 +296,8 @@
 				76E7D7281A83E95F004F3873 /* TableViewController.m */,
 				7653F7991A846FF10032DE8C /* ResidentDetailViewController.h */,
 				7653F79A1A846FF10032DE8C /* ResidentDetailViewController.m */,
+				76B2C1D61A86610300AE2E1D /* ResidentCoverViewController.h */,
+				76B2C1D71A86610300AE2E1D /* ResidentCoverViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -278,6 +332,7 @@
 		76E7D7351A8463EE004F3873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				76B2C1B21A86322900AE2E1D /* XHLoadingNavigationItemTitleView */,
 				76B779241A85CCAF00845D2E /* FXBlurView */,
 				76E5BF6C1A84DA31001D35DE /* TableViewCell */,
 				76E5BF681A84DA16001D35DE /* TwitterCover */,
@@ -366,13 +421,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B2C1CA1A865CC100AE2E1D /* Resident_Evil_5@2x.jpg in Resources */,
+				76B2C1C81A865CC100AE2E1D /* Resident_Evil_3@2x.jpg in Resources */,
 				76E7D7081A83E3FE004F3873 /* Main.storyboard in Resources */,
+				76B2C1CF1A865E1900AE2E1D /* Resident_Evil_6@2x.jpg in Resources */,
 				76E7D70D1A83E3FE004F3873 /* LaunchScreen.xib in Resources */,
 				76E7D70A1A83E3FE004F3873 /* Images.xcassets in Resources */,
+				76B2C1CD1A865CC100AE2E1D /* Resident_Evil_Revelations@2x.jpg in Resources */,
+				76B2C1C61A865CC100AE2E1D /* Resident_Evil_0@2x.jpg in Resources */,
+				76B2C1C91A865CC100AE2E1D /* Resident_Evil_4@2x.jpg in Resources */,
+				76B2C1C51A865CC100AE2E1D /* Biohazard@2x.jpg in Resources */,
+				76B2C1D11A865F3000AE2E1D /* Resident_Evil_Code_Veronica@2x.jpg in Resources */,
+				76B2C1D51A86601300AE2E1D /* Biohazard_HD@2x.jpg in Resources */,
 				76B7791D1A859D5100845D2E /* nav_bg@2x.png in Resources */,
 				76E7D72F1A845406004F3873 /* resident_main.plist in Resources */,
 				76B7791F1A85A36300845D2E /* Default-568h@2x.png in Resources */,
-				7614F8E71A84A1C5009E4AEC /* resident_cover_1@2x.png in Resources */,
+				76B2C1C71A865CC100AE2E1D /* Resident_Evil_2@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,14 +454,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B2C1BA1A86322900AE2E1D /* UIViewController+XHLoadingNavigationItemTitle.m in Sources */,
 				76E7D7331A8462F7004F3873 /* Entity.m in Sources */,
 				7653F79B1A846FF10032DE8C /* ResidentDetailViewController.m in Sources */,
 				76E5BFA71A84F42D001D35DE /* UIViewExt.m in Sources */,
+				76B2C1B91A86322900AE2E1D /* TYDotIndicatorView.m in Sources */,
 				76E7D6FF1A83E3FE004F3873 /* AppDelegate.m in Sources */,
 				76E7D7381A8465D7004F3873 /* ResidentMainArrayService.m in Sources */,
 				76B779271A85CCAF00845D2E /* FXBlurView.m in Sources */,
 				76E7D7021A83E3FE004F3873 /* resident.xcdatamodeld in Sources */,
+				76B2C1BB1A86322900AE2E1D /* XHLoadingNavigationItemTitleView.m in Sources */,
 				7653F79F1A8477460032DE8C /* TableViewCell.m in Sources */,
+				76B2C1D81A86610300AE2E1D /* ResidentCoverViewController.m in Sources */,
 				76E7D7291A83E95F004F3873 /* TableViewController.m in Sources */,
 				76E7D6FC1A83E3FE004F3873 /* main.m in Sources */,
 				76E5BF6B1A84DA16001D35DE /* UIScrollView+TwitterCover.m in Sources */,

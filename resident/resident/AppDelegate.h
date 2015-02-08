@@ -23,3 +23,11 @@
 
 @end
 
+
+@protocol TabelViewCellTouchUpInsideProtocol <NSObject>
+
+@required
+- (void)tabelViewCellTouchUpInside;
+
+@end
+

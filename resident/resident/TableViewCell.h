@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *enLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 
+@property (weak, nonatomic) id<TabelViewCellTouchUpInsideProtocol> delegate;
+
 
 @end

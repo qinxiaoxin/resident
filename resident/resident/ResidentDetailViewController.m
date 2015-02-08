@@ -8,14 +8,19 @@
 
 #import "ResidentDetailViewController.h"
 #import "UIScrollView+TwitterCover.h"
+#import "UIViewController+XHLoadingNavigationItemTitle.h"
+#import "ResidentCoverViewController.h"
 
 @interface ResidentDetailViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, strong) UIImageView *coverImageView;
+@property (nonatomic, strong) UILabel *promptBriefLabel;
 @property (nonatomic, strong) UILabel *briefLabel;
+@property (nonatomic, strong) UILabel *promptHistoryLabel;
 @property (nonatomic, strong) UILabel *historyLabel;
+@property (nonatomic, strong) UILabel *promptStoryLabel;
 @property (nonatomic, strong) UILabel *storyLabel;
 
 @end
@@ -48,7 +53,7 @@
 {
     //ScrollView
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    _scrollView.backgroundColor = COLOR(50, 50, 50, 1);
+    _scrollView.backgroundColor = COLOR(30, 40, 60, 1);
     NSString *imageStr = [self.residentDic valueForKeyPath:@"image"];
     if (imageStr) {
         [_scrollView addTwitterCoverWithImage:[UIImage imageNamed:imageStr]];
@@ -65,11 +70,19 @@
     _coverImageView.layer.shadowOffset = CGSizeMake(0, 0);
     _coverImageView.layer.shadowOpacity = 0.8f;
     _coverImageView.layer.shadowRadius = 20.f;
+    _coverImageView.userInteractionEnabled = YES;
+    [_coverImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(residentCoverView:)]];
     [_scrollView addSubview:_coverImageView];
     
     
     
     //Label
+    _promptBriefLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, _coverImageView.bottom + 100, 100, 20)];
+    _promptBriefLabel.font = [UIFont systemFontOfSize:16];
+    _promptBriefLabel.textColor = [UIColor whiteColor];
+    _promptBriefLabel.text = @"簡介：";
+    [_scrollView addSubview:_promptBriefLabel];
+    
     _briefLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _briefLabel.numberOfLines = 0;
     _briefLabel.font = [UIFont systemFontOfSize:16];
@@ -82,6 +95,14 @@
     [_scrollView addSubview:_briefLabel];
     
     
+    
+    
+    _promptHistoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, _briefLabel.bottom + 50, 100, 20)];
+    _promptHistoryLabel.font = [UIFont systemFontOfSize:16];
+    _promptHistoryLabel.textColor = [UIColor whiteColor];
+    _promptHistoryLabel.text = @"歷史：";
+    [_scrollView addSubview:_promptHistoryLabel];
+    
     _historyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _historyLabel.numberOfLines = 0;
     _historyLabel.font = [UIFont systemFontOfSize:16];
@@ -93,6 +114,15 @@
     _historyLabel.frame = CGRectMake(20, _briefLabel.bottom + 100, historyLabelSize.width, historyLabelSize.height);
     [_scrollView addSubview:_historyLabel];
     
+    
+    
+    
+    
+    _promptStoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, _historyLabel.bottom + 50, 100, 20)];
+    _promptStoryLabel.font = [UIFont systemFontOfSize:16];
+    _promptStoryLabel.textColor = [UIColor whiteColor];
+    _promptStoryLabel.text = @"劇情：";
+    [_scrollView addSubview:_promptStoryLabel];
     
     _storyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _storyLabel.numberOfLines = 0;
@@ -114,6 +144,16 @@
     if (SYSTEM_VERSION < 8.f) {
         _scrollView.contentOffset = CGPointMake(0, -64);
     }
+}
+
+- (void)residentCoverView:(id)sender
+{
+    ResidentCoverViewController *rcvc = [[ResidentCoverViewController alloc] init];
+    rcvc.coverImage = _coverImageView.image;
+    
+    [self presentViewController:rcvc animated:YES completion:^{
+        
+    }];
 }
 
 
@@ -140,35 +180,33 @@
     
     
     //navigationbar 隐藏底部横线
-//    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
-//        
-//        NSArray *array = self.navigationController.navigationBar.subviews;
-//        
-//        for (id obj in array) {
-//            if ([obj isKindOfClass:[UIImageView class]]) {
-//                UIImageView *imageView = (UIImageView *)obj;
-//                imageView.hidden = YES;
-//            }
-//        }
-//    }
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     
     //statusbar 显示为白色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [self stopAnimationTitle];
 }
 
 //还原成首页状态 navigationbar & statusbar
-- (void)setNavbarAndStatusBarBlack
+- (void)setNavbarTranslucentNo
 {
-    
+    //navigationbar 置为不透明
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 
 
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    
+    if (scrollView.contentOffset.y >= 256) {
+        [self setNavbarTranslucentNo];
+    }else{
+        [self setNavbarTranslucentWhiteAndStatusBarWhite];
+    }
 }
 
 

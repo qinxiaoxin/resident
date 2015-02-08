@@ -10,8 +10,9 @@
 #import "ResidentMainArrayService.h"
 #import "ResidentDetailViewController.h"
 #import "TableViewCell.h"
+#import "UIViewController+XHLoadingNavigationItemTitle.h"
 
-@interface TableViewController ()
+@interface TableViewController ()<TabelViewCellTouchUpInsideProtocol>
 
 @property (nonatomic, strong) NSArray *residentMainArray;
 
@@ -36,7 +37,6 @@
     [super viewWillAppear:animated];
     
     [self setNavbarWhiteAndStatusBarWhite];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,34 +55,14 @@
 //设置新界面 navigationbar & statusbar
 - (void)setNavbarWhiteAndStatusBarWhite
 {
-    //navigationbar 背景色
-    self.navigationController.navigationBar.barTintColor = COLOR(55, 55, 55, 1);
+    //navigationbar 设置中间Title
+    self.title = @"游戏作品列表：本篇";
     
-    //navigationbar 标题颜色
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-    shadow.shadowOffset = CGSizeMake(0, 1);
-    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
-                                                           shadow, NSShadowAttributeName,
-                                                           [UIFont systemFontOfSize:16.f], NSFontAttributeName, nil]];
+    //navigationbar 背景色
+    self.navigationController.navigationBar.barTintColor = COLOR(20, 25, 40, 1);
     
     //navigationbar 置为不透明
     self.navigationController.navigationBar.translucent = NO;
-    
-    
-    //navigationbar 还原底部横线
-//    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
-//        
-//        NSArray *array = self.navigationController.navigationBar.subviews;
-//        
-//        for (id obj in array) {
-//            if ([obj isKindOfClass:[UIImageView class]]) {
-//                UIImageView *imageView = (UIImageView *)obj;
-//                imageView.hidden = NO;
-//            }
-//        }
-//    }
     
     //statusbar 显示为白色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -106,7 +86,8 @@
     
     static NSString *CellIdentifier = @"TableViewCell";
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell.backgroundColor = COLOR(50, 50, 50, 1);
+    cell.delegate = self;
+    cell.backgroundColor = COLOR(30, 40, 60, 1);
     
     NSDictionary *dic = [self.residentMainArray objectAtIndex:indexPath.row];
     cell.cnLabel.text = [dic valueForKeyPath:@"cnname"];
@@ -123,7 +104,8 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    tableView.backgroundColor = COLOR(50, 50, 50, 1);
+    tableView.backgroundColor = COLOR(30, 40, 60, 1);
+//    tableView.delaysContentTouches = NO;
     
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:UIEdgeInsetsZero];
@@ -132,6 +114,7 @@
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
+
 
 
 #pragma mark - Navigation
@@ -145,6 +128,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         if (indexPath) {
@@ -157,5 +141,15 @@
     }
 }
 
+
+
+#pragma mark - Table view cell touch up inside delegate
+
+- (void)tabelViewCellTouchUpInside
+{
+    debugMethod();
+    
+    [self startAnimationTitle];
+}
 
 @end
