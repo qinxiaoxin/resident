@@ -53,7 +53,7 @@
 {
     //ScrollView
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    _scrollView.backgroundColor = COLOR(30, 40, 60, 1);
+    _scrollView.backgroundColor = TVC_BG_COLOR;
     NSString *imageStr = [self.residentDic valueForKeyPath:@"image"];
     if (imageStr) {
         [_scrollView addTwitterCoverWithImage:[UIImage imageNamed:imageStr]];

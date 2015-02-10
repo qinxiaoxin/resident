@@ -24,10 +24,11 @@
 @end
 
 
+@class TableViewCell;
 @protocol TabelViewCellTouchUpInsideProtocol <NSObject>
 
 @required
-- (void)tabelViewCellTouchUpInside;
+- (void)tabelViewCellTouchUpInside:(TableViewCell *)cell;
 
 @end
 

@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    tapRecognizer.delegate = self;
+    [self addGestureRecognizer:tapRecognizer];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -22,15 +24,10 @@
     
 }
 
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+- (void)handleTap:(UITapGestureRecognizer *)tapRecognizer
 {
-    [super setHighlighted:highlighted animated:animated];
-    
-    if (highlighted == YES) {
-        [_delegate tabelViewCellTouchUpInside];
-    }else{
-        
+    if (tapRecognizer.state == UIGestureRecognizerStateEnded) {
+        [_delegate tabelViewCellTouchUpInside:self];
     }
 }
-
 @end

@@ -30,6 +30,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self initData];
+    
+    self.tableView.backgroundColor = TVC_BG_COLOR;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,7 +61,7 @@
     self.title = @"游戏作品列表：本篇";
     
     //navigationbar 背景色
-    self.navigationController.navigationBar.barTintColor = COLOR(20, 25, 40, 1);
+    self.navigationController.navigationBar.barTintColor = NAV_BG_COLOR;
     
     //navigationbar 置为不透明
     self.navigationController.navigationBar.translucent = NO;
@@ -86,8 +88,8 @@
     
     static NSString *CellIdentifier = @"TableViewCell";
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell.backgroundColor = TVC_BG_COLOR;
     cell.delegate = self;
-    cell.backgroundColor = COLOR(30, 40, 60, 1);
     
     NSDictionary *dic = [self.residentMainArray objectAtIndex:indexPath.row];
     cell.cnLabel.text = [dic valueForKeyPath:@"cnname"];
@@ -102,20 +104,19 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    tableView.backgroundColor = COLOR(30, 40, 60, 1);
+//iOS 7.0 table view cell 横线顶到左边
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    tableView.backgroundColor = TVC_BG_COLOR;
 //    tableView.delaysContentTouches = NO;
-    
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
-}
-
-
+//    
+//    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [cell setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [cell setLayoutMargins:UIEdgeInsetsZero];
+//    }
+//}
 
 #pragma mark - Navigation
 
@@ -141,15 +142,27 @@
     }
 }
 
+#pragma mark - TableViewCellDelegate
 
-
-#pragma mark - Table view cell touch up inside delegate
-
-- (void)tabelViewCellTouchUpInside
+- (void)tabelViewCellTouchUpInside:(TableViewCell *)cell
 {
-    debugMethod();
-    
     [self startAnimationTitle];
+    
+    
+    //GCD
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        [NSThread sleepForTimeInterval:1.5f];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self stopAnimationTitle];
+            
+            [self performSegueWithIdentifier:@"List_Detail" sender:cell];
+            
+        });
+    });
 }
+
 
 @end

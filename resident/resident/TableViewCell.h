@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewCell : UITableViewCell
+@interface TableViewCell : UITableViewCell<UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *cnLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jpLabel;
@@ -16,6 +16,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 
 @property (weak, nonatomic) id<TabelViewCellTouchUpInsideProtocol> delegate;
-
 
 @end
