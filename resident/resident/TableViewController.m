@@ -148,11 +148,10 @@
 {
     [self startAnimationTitle];
     
-    
     //GCD
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
-        [NSThread sleepForTimeInterval:1.5f];
+        [NSThread sleepForTimeInterval:1.f];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             

@@ -42,3 +42,5 @@
 #define COVER_IMAGE_VIEW_HEIGHT                     270
 #define BLUR_DEGREE                                 200
 #define CHTWITTERCOVERVIEW_HEIGHT                   320
+
+#define DEMO_VIEW_CONTROLLER_PUSH                   FALSE

@@ -10,8 +10,9 @@
 #import "UIScrollView+TwitterCover.h"
 #import "UIViewController+XHLoadingNavigationItemTitle.h"
 #import "ResidentCoverViewController.h"
+#import "ReaderViewController.h"
 
-@interface ResidentDetailViewController ()<UIScrollViewDelegate>
+@interface ResidentDetailViewController ()<UIScrollViewDelegate,ReaderViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -117,7 +118,6 @@
     
     
     
-    
     _promptStoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, _historyLabel.bottom + 50, 100, 20)];
     _promptStoryLabel.font = [UIFont systemFontOfSize:16];
     _promptStoryLabel.textColor = [UIColor whiteColor];
@@ -168,20 +168,22 @@
                                                          forBarMetrics:UIBarMetricsDefault];
     
     //navigationbar 添加按钮
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
-    UIBarButtonItem *strategyItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:nil];
-    NSArray *actionButtonItems = @[shareItem, strategyItem];
+    UIBarButtonItem *shareBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+    UIBarButtonItem *strategyBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"button_strategy"] style:UIBarButtonItemStyleDone target:self action:@selector(strategyBarButtonItemAction:)];
+    NSArray *actionButtonItems = @[shareBarButtonItem, strategyBarButtonItem];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
-    
     
     //navigationbar 置为透明
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bg"] forBarMetrics:UIBarMetricsDefaultPrompt];
     
-    
     //navigationbar 隐藏底部横线
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    
+    //statusbar 取消隐藏
+    [UIApplication sharedApplication].statusBarHidden = NO;
     
     //statusbar 显示为白色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -194,6 +196,65 @@
 {
     //navigationbar 置为不透明
     self.navigationController.navigationBar.translucent = NO;
+}
+
+
+
+#pragma mark - Action
+
+- (void)strategyBarButtonItemAction:(UIBarButtonItem *)strategyBarButtonItem
+{
+    //status bar 隐藏
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    
+    NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    
+    NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    
+    NSString *filePath = [pdfs firstObject]; assert(filePath != nil); // Path to first PDF file
+    
+    ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+    
+    if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
+    {
+        ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+        
+        readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+        
+#if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
+        
+        [self.navigationController pushViewController:readerViewController animated:YES];
+        
+#else // present in a modal view controller
+        
+        readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        
+        [self presentViewController:readerViewController animated:YES completion:NULL];
+        
+#endif // DEMO_VIEW_CONTROLLER_PUSH
+    }
+    else // Log an error so that we know that something went wrong
+    {
+        NSLog(@"%s [ReaderDocument withDocumentFilePath:'%@' password:'%@'] failed.", __FUNCTION__, filePath, phrase);
+    }
+}
+
+
+
+#pragma mark - ReaderViewControllerDelegate methods
+
+- (void)dismissReaderViewController:(ReaderViewController *)viewController
+{
+#if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+#else // dismiss the modal view controller
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+#endif // DEMO_VIEW_CONTROLLER_PUSH
 }
 
 
@@ -230,5 +291,6 @@
     debugMethod();
     [_scrollView removeTwitterCoverView];
 }
+
 
 @end
