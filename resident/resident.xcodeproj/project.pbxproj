@@ -748,7 +748,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "生化危机攻略";
-				PROVISIONING_PROFILE = "a27fe021-6dec-4618-ac4f-cada69388184";
+				PROVISIONING_PROFILE = "68f78ac2-9722-4c9a-85b1-a395b761a2f6";
 			};
 			name = Debug;
 		};
@@ -762,7 +762,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "生化危机攻略";
-				PROVISIONING_PROFILE = "a27fe021-6dec-4618-ac4f-cada69388184";
+				PROVISIONING_PROFILE = "68f78ac2-9722-4c9a-85b1-a395b761a2f6";
 			};
 			name = Release;
 		};
